@@ -1,4 +1,11 @@
 class Resume < ApplicationRecord
+
+  before_save :do_logging
+
+  def do_logging
+    puts "Saving object"
+  end
+
   has_many :view_histories
   has_many :jobs
   has_one :cover_letter
